@@ -8,7 +8,7 @@ int main() {
     
     int n, k;
     cin >> n >> k;
-    if(n == 1){
+    if(k>n){
         cout << 0;
         return 0;
     }
