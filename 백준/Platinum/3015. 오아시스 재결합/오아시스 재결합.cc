@@ -14,18 +14,17 @@ int main() {
         cin >> target;
         while(!st.empty() && st.top().first < target) {
             ans += st.top().second;
-            ans += 1;
             st.pop();
         }
 
-        if(st.empty()) st.push({target, 0});
+        if(st.empty()) st.push({target, 1});
         else if(st.top().first == target) {
-            st.top().second += 1;
             ans += st.top().second;
+            st.top().second += 1;
             if(st.size() > 1) ans++;
         }
         else if(st.top().first > target) {
-            st.push({target, 0});
+            st.push({target, 1});
             ans += 1;
         }
     }
