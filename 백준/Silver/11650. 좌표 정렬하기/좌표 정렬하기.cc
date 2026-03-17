@@ -2,7 +2,7 @@
 
 using namespace std;
 
-bool cmp(pair<int,int> a, pair<int,int> b) {
+bool cmp(const pair<int,int>& a, const pair<int,int>& b) {
     if(a.first == b.first) return a.second < b.second;
     else 
         return a.first < b.first;
