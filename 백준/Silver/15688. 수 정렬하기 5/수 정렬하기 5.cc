@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 
 using namespace std;
+#define MILL 1000000
+int cnt[2000001];
 
 int main() {
     ios::sync_with_stdio(0);
@@ -8,14 +10,17 @@ int main() {
 
     int n, tmp;
     cin >> n;
-    vector<int> v;
+
     for(int i = 0; i < n; i++) {
         cin >> tmp;
-        v.push_back(tmp);
+        int num = tmp + MILL;
+        cnt[num]++;
     }
-    sort(v.begin(), v.end());
 
-    for(auto i : v) {
-        cout << i << '\n';
+    for(int i = 0; i <= 2*MILL; i++) {
+        while(cnt[i] > 0) {
+            cout << i - MILL << '\n';
+            cnt[i]--;
+        }
     }
 }
